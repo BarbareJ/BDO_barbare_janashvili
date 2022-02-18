@@ -41,3 +41,12 @@ bool solution(){
     }
     return false;
     
+}
+int main()
+{
+    if(solution()) cout << "yes";
+    else
+    cout <<"no";
+    
+    return 0;
+}
