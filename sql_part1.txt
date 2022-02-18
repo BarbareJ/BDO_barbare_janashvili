@@ -1,0 +1,19 @@
+/* N1 */
+select e.role "role", max(e.salary) "Max Salary"
+from employees e
+group by e.role;
+
+/* N2 */
+select emp.name "name", emp.surname "surname", x.position "role", x.maxsalary "salary"
+from (select e.role position, max(e.salary) maxsalary
+from employees e
+group by e.role) x
+join employees emp
+on x.position=emp.role and x.maxsalary=emp.salary;
+
+/* N3 */
+select x.role "Role", sum(x.sal) "Salary"
+from (select e.role pos, e.salery sal
+employees e
+where e.salary>=300 and e.salary<=600) x
+group by x.pos;
